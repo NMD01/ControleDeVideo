@@ -1,4 +1,23 @@
 let video = document.getElementById("video1")
+let duração = document.getElementById("duracao")
+
+
+function controleTempo(){
+let atual =Number(video.duration)
+    //duração.max = atual
+    duração.min = 0
+    video.currentTime = duração.value 
+console.log(duração.max)
+}
+
+video.addEventListener("timeupdate",function mudar(){
+    duração.max = this.duration
+    
+    let tempo = ((this.currentTime / this.duration) * 1000) / 3.7
+    console.log(tempo)
+    duração.value = tempo
+})
+
 
 function voltar10(){
     tempo = video.currentTime
@@ -52,16 +71,7 @@ function pular10(){
 
 
 
-let container = document.getElementById("container")
-container.addEventListener("mouseover", function dentro(){
-    let controle = document.getElementById("controle")
-    controle.style.display = "block"
-})
-container.addEventListener("mouseout", function fora(){
-    let controle = document.getElementById("controle")
-    controle.style.display = "none"
-    
-}) 
+
 
 
 
@@ -83,6 +93,25 @@ barraVolume.addEventListener("input", function teste(){
         
     
 })
+
+
+
+let container = document.getElementById("container")
+container.addEventListener("mouseover", function dentro(){
+    let controle = document.getElementById("controle")
+    controle.style.display = "block"
+})
+container.addEventListener("mouseout", function fora(){
+    let controle = document.getElementById("controle")
+    controle.style.display = "none"
+    
+    
+}) 
+
+function tirarVolume (){
+    barraVolume.style.display = "none"
+}
+
 
 
 function mudo(){
@@ -110,11 +139,11 @@ BotaoVolume.addEventListener("mouseenter", function aparecerVolume(){
 })
 
 
-function esconder(){
+/* function esconder(){
     setTimeout(function esconderVolume(){
     barraVolume.style.display = "none"
-    },3000)
-}
+    },10000)
+}  */
 
 
 
