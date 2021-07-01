@@ -7,19 +7,27 @@ let atual =Number(video.duration)
     //duração.max = atual
     duração.min = 0
     video.currentTime = duração.value 
-console.log(duração.max)
+
 }
 
 video.addEventListener("timeupdate",function mudar(){
     duração.max = this.duration
     
     let tempo = ((this.currentTime / this.duration) * 1000) / 3.7
-    console.log(tempo)
+    
     duração.value = tempo
 })
 
 
 function voltar10(){
+    let esquerda = document.getElementById("esquerda")
+    esquerda.style = "background-color: rgba(126, 125, 125, 0.397);"
+    let imgVoltar = document.getElementById("imgVoltar")
+    imgVoltar.style.display = "block"
+    setTimeout(function corEsquerda(){
+        esquerda.style = "backgroung-color: null;"
+        imgVoltar.style.display = "none"
+    },1000)
     tempo = video.currentTime
     video.currentTime = tempo - 10
 }
@@ -64,11 +72,25 @@ function avançar(){
 }
 
 function pular10(){
+    let direita = document.getElementById("direita")
+    direita.style = "background-color: rgba(126, 125, 125, 0.397);"
+    let imgAvançar = document.getElementById("imgAvançar")
+    imgAvançar.style.display = "block "
+    avançar.style
+    setTimeout(function corDireita(){
+        direita.style = "backgroung-color: null;"
+        imgAvançar.style.display = "none"
+    },1000)
     tempo = video.currentTime
     video.currentTime = tempo + 10
 }
 
-
+function pause(){
+    let play = document.getElementById("play")
+    play.teste = undefined
+    play.src = "./imagens/play.png"
+    video.pause()
+}
 
 
 
@@ -139,19 +161,26 @@ BotaoVolume.addEventListener("mouseenter", function aparecerVolume(){
 })
 
 
-/* function esconder(){
-    setTimeout(function esconderVolume(){
-    barraVolume.style.display = "none"
-    },10000)
-}  */
+
+function aparecerVelocidade(){
+    let velocidades = document.getElementById("velocidades")
+    velocidades.style.display = "block"
+    velocidades.addEventListener("mouseleave",function(){
+        velocidades.style.display = "none"
+    })
+}
+
+function mudarVelocidade(v){
+    video.playbackRate = v
+    
+}
 
 
-
-let direita = document.getElementById("direita")
+/* let direita = document.getElementById("direita")
 direita.addEventListener("dblclick", pular10)
 
 let esquerda = document.getElementById("esquerda")
-esquerda.addEventListener("dblclick", voltar10)
+esquerda.addEventListener("dblclick", voltar10) */
 
 
 
