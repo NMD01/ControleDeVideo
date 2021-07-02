@@ -99,7 +99,7 @@ function pause(){
 
 
 let barraVolume = document.getElementById("barraVolume")
-barraVolume.addEventListener("input", function teste(){
+barraVolume.addEventListener("input", function(){
     video.volume = barraVolume.value
 
     let BotaoVolume = document.getElementById("BotaoVolume")
@@ -170,8 +170,57 @@ function aparecerVelocidade(){
     })
 }
 
+
+
+
+
+
 function mudarVelocidade(v){
     video.playbackRate = v
+
+let imgVelocidade = {
+    0.25:"./imagens/025.png",
+    0.5:"./imagens/05.png",
+    0.75:"./imagens/075.png",
+    1:"./imagens/vel.png",
+    1.25:"./imagens/125.png",
+    1.5:"./imagens/15.png",
+    1.75:"./imagens/175.png",
+    2:"./imagens/2.png"
+}
+
+    let vel = document.getElementById("vel")
+    vel.src = imgVelocidade[v] 
+}
+
+
+
+
+
+function mudarCor(a,img1,img2){
+
+    
+
+    let botoes = {
+        stop1:"./imagens/stopVermelho.png",
+        stop2:"./imagens/stop.png",
+        play1:"./imagens/playVerde.png",
+        play2:"./imagens/play.png"
+    }
+    console.log(botoes[img1])
+
+    a.src = botoes[img1]
+
+    let botao = document.getElementById(a.id)
+
+    if(botao.src == "./imagens/pause.png"){
+        a.src = "./imagens/pause.png"
+    }else{
+        botao.addEventListener("mouseout",function(){
+        a.src = botoes[img2]
+    })
+    }
+
     
 }
 

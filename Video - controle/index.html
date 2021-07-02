@@ -23,10 +23,10 @@
         
         
         <!-- <img class="btn" onclick="retroceder()"  src="./imagens/retroceder.png"> -->
-        <img class="" id="play" onclick="play()" style="width: 55px;" src="./imagens/play.png">
-        <img class="" style="width: 40px; padding-top: 5px;" onclick="stop()" src="./imagens/stop.png">
-        <input type="range" name="" id="duracao" min="" value="0" step="0.1" max="" style="width: 70%;" oninput="controleTempo()"  >
-        <img src="./imagens/vel.png" style="width: 30px; margin-bottom: 5px;" alt="" onmouseenter = "aparecerVelocidade()">
+        <img class="ponteiro" id="play" onmouseover="mudarCor(this, 'play1', 'play2')" onclick="play()" style="width: 55px;" src="./imagens/play.png">
+        <img class="ponteiro" id="stop" onmouseover="mudarCor(this, 'stop1', 'stop2')" style="width: 40px; padding-top: 5px;" onclick="stop()" src="./imagens/stop.png">
+        <input class="ponteiro" type="range" name="" id="duracao" min="" value="0" step="0.1" max="" style="width: 70%;" oninput="controleTempo()"  >
+        <img class="ponteiro" id="vel" src="./imagens/vel.png" style="width: 30px; margin-bottom: 5px;" alt="" onmouseenter = "aparecerVelocidade()">
         <ul id="velocidades">
             <li class="velocidade" onclick="mudarVelocidade(2)">2</li>
             <li class="velocidade" onclick="mudarVelocidade(1.75)">1.75</li>
@@ -37,8 +37,8 @@
             <li class="velocidade" onclick="mudarVelocidade(0.5)">0.5</li>
             <li class="velocidade" onclick="mudarVelocidade(0.25)">0.25</li>
         </ul>
-        <img id="BotaoVolume" onclick="mudo()" class="" src="./imagens/volumeMedio.png" style="width: 30px; padding-top: 20px; padding-right: 5px;" alt=""  >
-        <input class="" type="range" min="0" step="0.1" max="1" id="barraVolume" onmouseout="tirarVolume()" >
+        <img id="BotaoVolume" onclick="mudo()" class="ponteiro" src="./imagens/volumeMedio.png" style="width: 30px; padding-top: 20px; padding-right: 5px;" alt=""  >
+        <input class="ponteiro" type="range" min="0" step="0.1" max="1" id="barraVolume" onmouseout="tirarVolume()" >
         <!-- <img class="btn" onclick="avançar()" src="./imagens/avançar.png"> -->
         
     
